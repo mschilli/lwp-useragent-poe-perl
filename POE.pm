@@ -217,7 +217,7 @@ LWP::UserAgent::POE - Drop-in LWP::UserAgent replacement in POE environments
 
 LWP::UserAgent::POE is a subclass of LWP::UserAgent and works 
 well in a POE environment. It is a drop-in replacement for LWP::UserAgent
-for systems that are already using LWP::UserAgent synchronously and want 
+in systems that are already using LWP::UserAgent synchronously and want 
 to play nicely with POE.
 
 The problem: LWP::UserAgent by itself is synchronous and blocks on
