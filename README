@@ -13,7 +13,7 @@ SYNOPSIS
 
           # The following command looks (and behaves) like it's blocking, 
           # but it actually keeps the POE kernel ticking and processing 
-          # other tasks. post() and request() work as well.
+          # other tasks.
         my $resp = $ua->get( "http://www.yahoo.com" );
 
         if($resp->is_success()) {
@@ -26,7 +26,7 @@ SYNOPSIS
 
 DESCRIPTION
     LWP::UserAgent::POE is a subclass of LWP::UserAgent and works well in a
-    POE environment. It is a drop-in replacement for LWP::UserAgent in
+    POE environment. It is a drop-in replacement for LWP::UserAgent for
     systems that are already using LWP::UserAgent synchronously and want to
     play nicely with POE.
 
