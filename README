@@ -13,7 +13,7 @@ SYNOPSIS
 
           # The following command looks (and behaves) like it's blocking, 
           # but it actually keeps the POE kernel ticking and processing 
-          # other tasks.
+          # other tasks. post() and request() work as well.
         my $resp = $ua->get( "http://www.yahoo.com" );
 
         if($resp->is_success()) {
@@ -62,14 +62,6 @@ DESCRIPTION
 
     Just make sure to pass these parameters to the constructor, see the
     'Bugs' section below on what hasn't been implemented yet.
-
-  Lazy Evaluation
-    LWP::UserAgent::POE uses the Scalar::Defer module from CPAN to implement
-    lazy evaluation of scalars with memoization. So when you get back a
-    $response from the request() method, what you really get is a scalar
-    that is tied to a piece of code that's going to run as soon as you
-    access the scalar. It will only run once, as its result will be
-    memoized.
 
   Bugs
     Currently, you can't call LWP::UserAgent's parameter methods, like

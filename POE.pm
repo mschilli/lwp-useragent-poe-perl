@@ -202,7 +202,7 @@ LWP::UserAgent::POE - Drop-in LWP::UserAgent replacement in POE environments
 
       # The following command looks (and behaves) like it's blocking, 
       # but it actually keeps the POE kernel ticking and processing 
-      # other tasks.
+      # other tasks. post() and request() work as well.
     my $resp = $ua->get( "http://www.yahoo.com" );
 
     if($resp->is_success()) {
