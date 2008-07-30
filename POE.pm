@@ -199,6 +199,10 @@ LWP::UserAgent::POE - Drop-in LWP::UserAgent replacement in POE environments
     use LWP::UserAgent::POE;
 
     my $ua = LWP::UserAgent::POE->new();
+
+      # The following command looks (and behaves) like it's blocking, 
+      # but it actually keeps the POE kernel ticking and processing 
+      # other tasks.
     my $resp = $ua->get( "http://www.yahoo.com" );
 
     if($resp->is_success()) {
@@ -222,10 +226,10 @@ unacceptable in POE, as the POE kernel needs to
 continue processing other tasks until the HTTP response arrives.
 
 LWP::UserAgent::POE to the rescue. Its request() method and all related
-methods like get(), post() seem to work just like in the original.
-But if you look under the hood, they're sending a request to a 
+methods like get(), post() etc. work just like in the original.
+But if you peek under the hood, they're sending a request to a 
 running POE::Component::Client::HTTP component and return a valid $response
-objects when a response from the network is available. 
+object when a response from the network is available. 
 Although the program flow seems to be blocked, it's not. 
 LWP::UserAgent::POE works the magic behind the scenes to keep the POE
 kernel ticking and process other tasks.
