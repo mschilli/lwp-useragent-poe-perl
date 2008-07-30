@@ -254,14 +254,6 @@ define a cookie jar:
 Just make sure to pass these parameters to the constructor, see the
 'Bugs' section below on what hasn't been implemented yet.
 
-=head2 Lazy Evaluation
-
-LWP::UserAgent::POE uses the Scalar::Defer module from CPAN to implement
-lazy evaluation of scalars with memoization. So when you get back a $response
-from the request() method, what you really get is a scalar that is tied to a
-piece of code that's going to run as soon as you access the scalar. It will
-only run once, as its result will be memoized.
-
 =head2 Bugs
 
 Currently, you can't call LWP::UserAgent's parameter methods, like
