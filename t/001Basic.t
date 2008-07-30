@@ -15,7 +15,7 @@ plan tests => 2;
 
 my $ticks = 0;
 
-#Log::Log4perl->easy_init($DEBUG);
+#Log::Log4perl->easy_init($INFO);
 
 POE::Session->create(
   inline_states => {

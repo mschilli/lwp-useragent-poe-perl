@@ -3,7 +3,8 @@
 ######################################################################
 
 NAME
-    LWP::UserAgent::POE - A LWP UserAgent ticking along with POE
+    LWP::UserAgent::POE - Drop-in LWP::UserAgent replacement in POE
+    environments
 
 SYNOPSIS
         use LWP::UserAgent::POE;

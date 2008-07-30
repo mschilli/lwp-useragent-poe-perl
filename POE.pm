@@ -123,7 +123,7 @@ sub simple_request {
 ###########################################
     my ($self, $request) = @_;
 
-    DEBUG "Received request ", $request->url();
+    INFO "Received request ", $request->url();
 
     my $promise = \my $scalar;
     $poe_kernel->post("$self", on_request => $request, $promise);
@@ -180,7 +180,8 @@ sub await {
         $poe_kernel->run_one_timeslice();
     }
 
-    DEBUG "Done awaiting ",  $request->url();
+    INFO "Response from ", $request->url(), " arrived (", 
+         $$promise->code(), ")";
 
     delete $self->{promises}{$await_id};
 }
@@ -191,7 +192,7 @@ __END__
 
 =head1 NAME
 
-LWP::UserAgent::POE - A LWP UserAgent ticking along with POE
+LWP::UserAgent::POE - Drop-in LWP::UserAgent replacement in POE environments
 
 =head1 SYNOPSIS
 
