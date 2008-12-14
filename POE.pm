@@ -5,7 +5,7 @@ package LWP::UserAgent::POE;
 use strict;
 use warnings;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 use base "LWP::UserAgent";
 
 use warnings;
@@ -124,6 +124,8 @@ sub simple_request {
     my ($self, $request) = @_;
 
     INFO "Received request ", $request->url();
+
+    $self->prepare_request( $request );
 
     my $promise = \my $scalar;
     $poe_kernel->post("$self", on_request => $request, $promise);
