@@ -22,9 +22,13 @@ sub new {
 ###########################################
     my ($class, %options) = @_;
 
+    my $default_options = LWP::UserAgent->new();
+    delete $default_options->{proxy};
+
     my $self = bless {
         await_id => 0,
         poco_alias => "lwp_useragent_poe_http_client_poco",
+        %$default_options,
         %options,
     }, $class;
 

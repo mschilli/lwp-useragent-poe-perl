@@ -2,6 +2,8 @@
 Revision history for Perl extension LWP::UserAgent::POE
 
 0.02  2008/12/13
+    (ms) Set LWP::UserAgent defaults (suggested by Marc Mims 
+         [rt.cpan.org #41164]).
     (ms) Added prepare_request() call to simple_request(). Turned
          out that LWP::UserAgent needs that in order for Basic Auth to
          function properly (bug reported by Marc Mims [rt.cpan.org #41164].
