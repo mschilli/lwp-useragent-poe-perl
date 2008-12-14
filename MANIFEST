@@ -7,3 +7,4 @@ MANIFEST.SKIP
 POE.pm
 README
 t/001Basic.t
+t/lwp_useragent_compat.t
