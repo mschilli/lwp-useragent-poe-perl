@@ -1,6 +1,10 @@
 ######################################################################
 Revision history for Perl extension LWP::UserAgent::POE
 
+0.03  2010/10/19
+    (ms) Passing constructor arguments through to LWP::UserAgent to
+         allow 'agent' and other parameters to take effect.
+
 0.02  2008/12/13
     (ms) Set LWP::UserAgent defaults (suggested by Marc Mims 
          [rt.cpan.org #41164]).

@@ -5,7 +5,7 @@ package LWP::UserAgent::POE;
 use strict;
 use warnings;
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 use base "LWP::UserAgent";
 
 use warnings;
@@ -22,7 +22,7 @@ sub new {
 ###########################################
     my ($class, %options) = @_;
 
-    my $default_options = LWP::UserAgent->new();
+    my $default_options = LWP::UserAgent->new( %options );
     delete $default_options->{proxy};
 
     my $self = bless {
