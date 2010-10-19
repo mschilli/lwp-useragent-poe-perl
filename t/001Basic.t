@@ -14,6 +14,8 @@ plan tests => 2;
 #sub POE::Kernel::ASSERT_DEFAULT () { 1 }
 
 my $ticks = 0;
+my $STOP   = 0;
+my $UA;
 
 #Log::Log4perl->easy_init($INFO);
 
@@ -24,11 +26,12 @@ POE::Session->create(
                 urlfetch();
               },
     next   => sub {
-                $_[KERNEL]->delay(next => .01);
+                $_[KERNEL]->delay(next => .01) unless $STOP;
                 $ticks++;
     },
     theend => sub {
-                exit 0;
+                $STOP = 1;
+                undef $UA;
               },
   },
 );
@@ -38,8 +41,8 @@ POE::Kernel->run();
 ###########################################
 sub urlfetch {
 ###########################################
-   my $ua = LWP::UserAgent::POE->new();
-   my $resp = $ua->get( "http://www.yahoo.com" );
+   $UA = LWP::UserAgent::POE->new();
+   my $resp = $UA->get( "http://www.yahoo.com" );
 
    my $code = $resp->code();
    like($code, qr/^(200|500)$/, "Return code");
