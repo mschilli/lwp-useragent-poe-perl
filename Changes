@@ -1,6 +1,9 @@
 ######################################################################
 Revision history for Perl extension LWP::UserAgent::POE
 
+0.04  2014/05/23
+    (ms) Fixed test suite, added "use" before "use base" ([rt.cpan.org #95887])
+
 0.03  2010/10/19
     (ms) Passing constructor arguments through to LWP::UserAgent to
          allow 'agent' and other parameters to take effect.

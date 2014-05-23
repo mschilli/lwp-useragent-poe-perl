@@ -18,6 +18,7 @@ WriteMakefile(
     'PREREQ_PM'    => {
         POE                           => "0.9999",
         POE::Component::Client::HTTP  => 0.83,
+        POE::Component::SSLify        => 1.008,
         HTTP::Request                 => 0,
         Log::Log4perl                 => 1,
     }, # e.g., Module::Name => 1.1

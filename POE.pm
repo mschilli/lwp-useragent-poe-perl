@@ -5,7 +5,8 @@ package LWP::UserAgent::POE;
 use strict;
 use warnings;
 
-our $VERSION = "0.03";
+our $VERSION = "0.04";
+use LWP::UserAgent;
 use base "LWP::UserAgent";
 
 use warnings;
