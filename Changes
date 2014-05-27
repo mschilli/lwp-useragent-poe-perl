@@ -1,6 +1,9 @@
 ######################################################################
 Revision history for Perl extension LWP::UserAgent::POE
 
+0.05  2014/05/26
+    (ms) Fixed prereq on LWP::UserAgent in Makefile.PL
+
 0.04  2014/05/23
     (ms) Fixed test suite, added "use" before "use base" ([rt.cpan.org #95887])
 
