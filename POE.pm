@@ -277,7 +277,7 @@ to take effect. LWP::UserAgent::POE translates the LWP::UserAgent parameter
 names to POE::Component::Client::HTTP's parameters, which are 
 slightly different.
 
-=head1 LEGALESE
+=head1 LICENSE
 
 Copyright 2008 by Mike Schilli and Rocco Caputo, all rights reserved.
 This program is free software, you can redistribute it and/or
